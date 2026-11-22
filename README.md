@@ -1,4 +1,4 @@
-# Experiment 3: Regression Techniques in Business Data(Simple Linear Regression)
+# EXPERIMENT NO.3 : REGRESSION TECHNIQUES IN BUSINESS DATA (SIMPLE LINEAR REGRESSION)
 
 ##  AIM
 
