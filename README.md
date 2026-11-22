@@ -1,9 +1,11 @@
 # Experiment 3: Regression Techniques in Business Data(Simple Linear Regression)
 
-##  Aim
+##  AIM
+
 To implement Simple Linear Regression in Python to study and predict the relationship between two business-related variables.
 
-## Dataset
+## DATASET
+
 A sample business dataset representing the relationship between **Advertising Expenditure** (in Lakhs) and **Sales Revenue** (in Crores). The goal is to analyze how changes in advertising investment affect sales performance.
 
 | Index | Advertising (Lakhs) | Sales (Crores) |
@@ -19,7 +21,7 @@ A sample business dataset representing the relationship between **Advertising Ex
 | 8 | 55 | 42 |
 | 9 | 60 | 45 |
 
-## Algorithm / Steps Followed
+## ALGORITHM / STEPS FOLLOWED
 1. Import required Python libraries (`numpy`, `pandas`, `matplotlib`, `scikit-learn`).
 2. Create and load the dataset into a Pandas DataFrame.
 3. Display the dataset.
@@ -29,7 +31,7 @@ A sample business dataset representing the relationship between **Advertising Ex
 7. Predict $Y$ values for given $X$ values and evaluate performance using the $R^2$ score.
 8. Plot the actual data points alongside the fitted regression line and predict sales for a new advertising budget.
 
-##  Functions and Methods Used
+## FUNCTIONS AND METHODS USED
 
 | Category | Function / Method | Purpose / Description |
 | :--- | :--- | :--- |
@@ -43,7 +45,7 @@ A sample business dataset representing the relationship between **Advertising Ex
 | | `plt.plot()` | Plot regression line (predicted relationship) |
 | | `plt.title()`, `plt.xlabel()`, `plt.ylabel()`, `plt.show()` | Configure and display the regression plot |
 
-##  Program & Output
+##  PROGRAM AND OUTPUT
 
 import numpy as np  
 import pandas as pd  
@@ -88,6 +90,6 @@ plt.show()
 <img width="738" height="451" alt="image" src="https://github.com/user-attachments/assets/2d770937-957b-440c-b117-b47435215c19" />
 
 
-##  Result
+##  RESULT
 
 Advertising strongly drives sales, with the model explaining 97.36% of sales variance ($R^2 = 0.9736$).An advertising spend of 50 Lakhs is projected to generate approximately 39.55 Crores in sales.
