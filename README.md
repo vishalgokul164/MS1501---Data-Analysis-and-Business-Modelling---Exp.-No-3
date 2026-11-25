@@ -47,34 +47,28 @@ A sample business dataset representing the relationship between **Advertising Ex
 
 ##  PROGRAM AND OUTPUT
 
-import numpy as np  
 import pandas as pd  
 import matplotlib.pyplot as plt  
 from sklearn.linear_model import LinearRegression  
-data = {  
+
+df = pd.DataFrame({  
     'Advertising': [18, 22, 25, 30, 35, 40, 45, 50, 55, 60],  
     'Sales': [12, 18, 20, 24, 28, 35, 38, 40, 42, 45]  
-}  
-df = pd.DataFrame(data)  
-print("--- 1. Dataset Loaded Successfully ---")  
-print(df)  
-X = df[['Advertising']]  
-y = df['Sales']  
-model = LinearRegression()  
-model.fit(X, y)  
-intercept = model.intercept_  
-slope = model.coef_[0]  
-print("\n--- 2. Model Parameters ---")  
-print(f"Intercept (a): {intercept:.4f}")  
-print(f"Slope (b): {slope:.4f}")  
-print(f"Regression Equation: Sales = {slope:.4f} * Advertising + {intercept:.4f}")  
+})  
+print("--- 1. Dataset Loaded Successfully ---\n", df, sep="")  
+X, y = df[['Advertising']], df['Sales']  
+model = LinearRegression().fit(X, y)  
+slope, intercept = model.coef_[0], model.intercept_  
+print(f"\n--- 2. Model Parameters ---\n"  
+      f"Intercept (a): {intercept:.4f}\n"  
+      f"Slope (b): {slope:.4f}\n"  
+      f"Regression Equation: Sales = {slope:.4f} * Advertising + {intercept:.4f}")  
 y_pred = model.predict(X)  
-r2 = model.score(X, y)  
-print("\n--- 3. Model Performance ---")  
-print(f"R-squared (R^2) Score: {r2:.4f}")  
-new_budget = np.array([[50]])  
-predicted_sales = model.predict(new_budget)  
-print(f"\nPredicted Sales for an Advertising budget of 50 Lakhs: {predicted_sales[0]:.2f} Crores")  
+pred_50 = model.predict(pd.DataFrame({'Advertising': [50]}))[0]  
+
+print(f"\n--- 3. Model Performance ---\n"  
+      f"R-squared (R^2) Score: {model.score(X, y):.4f}\n\n"  
+      f"Predicted Sales for an Advertising budget of 50 Lakhs: {pred_50:.2f} Crores")  
 plt.figure(figsize=(8, 5))  
 plt.scatter(X, y, color='blue', label='Actual Data Points', s=70)  
 plt.plot(X, y_pred, color='red', linewidth=2, label='Regression Line')  
@@ -84,7 +78,7 @@ plt.ylabel('Sales Revenue (Crores)')
 plt.legend()  
 plt.grid(True, linestyle='--', alpha=0.6)  
 plt.tight_layout()  
-plt.show()  
+plt.show()
 
 <img width="475" height="321" alt="image" src="https://github.com/user-attachments/assets/43a3a22f-30fb-4575-92bf-94850804f816" />
 <img width="738" height="451" alt="image" src="https://github.com/user-attachments/assets/2d770937-957b-440c-b117-b47435215c19" />
